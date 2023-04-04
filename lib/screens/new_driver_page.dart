@@ -5,10 +5,10 @@ class NewDriversCode extends StatefulWidget {
   const NewDriversCode({Key? key}) : super(key: key);
 
   @override
-  _NewDriversCodeState createState() => _NewDriversCodeState();
+  NewDriversCodeState createState() => NewDriversCodeState();
 }
 
-class _NewDriversCodeState extends State<NewDriversCode> {
+class NewDriversCodeState extends State<NewDriversCode> {
   bool generated = false;
   final _formKey = GlobalKey<FormState>();
   final nameController = TextEditingController();

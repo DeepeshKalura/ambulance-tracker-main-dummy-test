@@ -7,10 +7,10 @@ class HospitalPage extends StatefulWidget {
   const HospitalPage({Key? key}) : super(key: key);
 
   @override
-  _HospitalPageState createState() => _HospitalPageState();
+  HospitalPageState createState() => HospitalPageState();
 }
 
-class _HospitalPageState extends State<HospitalPage> {
+class HospitalPageState extends State<HospitalPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

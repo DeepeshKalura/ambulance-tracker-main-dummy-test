@@ -3,7 +3,7 @@ import 'package:ambulance_tracker/constants.dart';
 
 class AlreadyHaveAnAccountCheck extends StatelessWidget {
   final bool login;
-  final Function press;
+  final void Function() press;
   const AlreadyHaveAnAccountCheck({
     Key? key,
     this.login = true,

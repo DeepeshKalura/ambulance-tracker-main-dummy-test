@@ -3,7 +3,7 @@ import 'package:ambulance_tracker/constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
-  final Function press;
+  final void Function() press;
   final Color color, textColor;
   const RoundedButton({
     Key? key,
@@ -28,12 +28,13 @@ class RoundedButton extends StatelessWidget {
 
   Widget newElevatedButton() {
     return ElevatedButton(
-      onPressed: () => press,
+      onPressed: press,
       style: ElevatedButton.styleFrom(
-          backgroundColor: color,
-          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-          textStyle: TextStyle(
-              color: textColor, fontSize: 14, fontWeight: FontWeight.w500)),
+        backgroundColor: color,
+        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+        textStyle: TextStyle(
+            color: textColor, fontSize: 14, fontWeight: FontWeight.w500),
+      ),
       child: Text(
         text,
         style: TextStyle(color: textColor),

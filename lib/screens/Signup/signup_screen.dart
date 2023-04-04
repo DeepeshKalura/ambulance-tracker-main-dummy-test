@@ -1,16 +1,15 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:ambulance_tracker/constants.dart';
 import 'package:ambulance_tracker/screens/Login/login_screen.dart';
 import 'package:ambulance_tracker/Components/already_have_an_account_acheck.dart';
 import 'package:ambulance_tracker/Components/rounded_button.dart';
 import 'package:ambulance_tracker/Components/rounded_input_field.dart';
 import 'package:ambulance_tracker/Components/rounded_password_field.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({Key key}) : super(key: key);
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class Body extends StatelessWidget {
-  const Body({Key key}) : super(key: key);
+  const Body({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -79,8 +78,8 @@ class Body extends StatelessWidget {
 class Background extends StatelessWidget {
   final Widget child;
   const Background({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
   }) : super(key: key);
 
   @override
@@ -109,7 +108,7 @@ class Background extends StatelessWidget {
 }
 
 class OrDivider extends StatelessWidget {
-  const OrDivider({Key key}) : super(key: key);
+  const OrDivider({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -150,15 +149,15 @@ class SocalIcon extends StatelessWidget {
   final String iconSrc;
   final Function press;
   const SocalIcon({
-    Key key,
-    this.iconSrc,
-    this.press,
+    Key? key,
+    required this.iconSrc,
+    required this.press,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: press,
+      onTap: () => press,
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10),
         padding: const EdgeInsets.all(20),

@@ -1,12 +1,12 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
-import 'package:ambulance_tracker/screens/Login/login_screen.dart';
-import 'package:ambulance_tracker/screens/Signup/signup_screen.dart';
-import 'package:ambulance_tracker/Components/rounded_button.dart';
-import 'package:ambulance_tracker/constants.dart';
+
+import '../../Components/rounded_button.dart';
+import '../../constants.dart';
+import '../Login/login_screen.dart';
+import '../Signup/signup_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({Key key}) : super(key: key);
+  const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class WelcomeScreen extends StatelessWidget {
 }
 
 class Body extends StatelessWidget {
-  const Body({Key key}) : super(key: key);
+  const Body({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,8 +82,8 @@ class Body extends StatelessWidget {
 class Background extends StatelessWidget {
   final Widget child;
   const Background({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
   }) : super(key: key);
 
   @override

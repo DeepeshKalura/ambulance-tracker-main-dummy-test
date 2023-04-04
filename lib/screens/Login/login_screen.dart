@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
 
 import 'package:ambulance_tracker/screens/choice_page.dart';
@@ -6,7 +5,7 @@ import 'package:ambulance_tracker/screens/choice_page.dart';
 import '../../Animation/fade_animation.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();

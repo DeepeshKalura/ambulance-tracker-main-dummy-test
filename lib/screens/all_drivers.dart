@@ -7,10 +7,10 @@ class ShowDrivers extends StatefulWidget {
   const ShowDrivers({Key? key}) : super(key: key);
 
   @override
-  _ShowDriversState createState() => _ShowDriversState();
+  ShowDriversState createState() => ShowDriversState();
 }
 
-class _ShowDriversState extends State<ShowDrivers> {
+class ShowDriversState extends State<ShowDrivers> {
   @override
   Widget build(BuildContext context) {
     List<List<Widget>> tabCats = sortDrivers();
@@ -38,7 +38,8 @@ class _ShowDriversState extends State<ShowDrivers> {
                 ),
                 onPressed: () => Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const NewDriversCode()),
+                      MaterialPageRoute(
+                          builder: (context) => const NewDriversCode()),
                     )),
           ],
         ),
@@ -71,6 +72,7 @@ class _ShowDriversState extends State<ShowDrivers> {
           width: MediaQuery.of(context).size.width - 50,
           height: MediaQuery.of(context).size.height / 6,
           child: Card(
+            color: col,
             child: Column(children: [
               Row(
                 children: const [
@@ -82,7 +84,6 @@ class _ShowDriversState extends State<ShowDrivers> {
               Text(regId),
               Text(status)
             ]),
-            color: col,
           )),
     );
   }
@@ -96,14 +97,14 @@ class _ShowDriversState extends State<ShowDrivers> {
 
     for (var e in drivers) {
       if (e['isFree'] && !e['isAvailable']) {
-        offline.add(driverCard(e['name'], const Color.fromRGBO(235, 233, 228, 1),
-            "Offline", e["reg_id"]));
+        offline.add(driverCard(e['name'],
+            const Color.fromRGBO(235, 233, 228, 1), "Offline", e["reg_id"]));
       } else if (e['isFree']) {
-        available.add(driverCard(e['name'], const Color.fromRGBO(217, 250, 195, 1),
-            "Available", e["reg_id"]));
+        available.add(driverCard(e['name'],
+            const Color.fromRGBO(217, 250, 195, 1), "Available", e["reg_id"]));
       } else if (!e['isFree'] || !e['isAvailable']) {
-        working.add(driverCard(
-            e['name'], const Color.fromRGBO(250, 152, 152, 1), "Busy", e["reg_id"]));
+        working.add(driverCard(e['name'],
+            const Color.fromRGBO(250, 152, 152, 1), "Busy", e["reg_id"]));
       }
       lst.add(available);
       lst.add(offline);

@@ -11,10 +11,10 @@ class DoneWidget extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _DoneWidgetState createState() => _DoneWidgetState();
+  DoneWidgetState createState() => DoneWidgetState();
 }
 
-class _DoneWidgetState extends State<DoneWidget> {
+class DoneWidgetState extends State<DoneWidget> {
   double _containerHeight = 0.0;
 
   @override

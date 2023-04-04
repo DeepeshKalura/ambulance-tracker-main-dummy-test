@@ -20,9 +20,6 @@ class DoneWidgetState extends State<DoneWidget> {
   @override
   void initState() {
     super.initState();
-
-    // If the process is done, show the AnimatedContainer with a height of 50.0.
-    // Otherwise, hide the AnimatedContainer by setting its height to 0.0.
     if (widget.isDone) {
       _containerHeight = 50.0;
     } else {
@@ -33,8 +30,6 @@ class DoneWidgetState extends State<DoneWidget> {
   @override
   void didUpdateWidget(DoneWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-
-    // When the isDone property changes, animate the container's height change.
     if (oldWidget.isDone != widget.isDone) {
       setState(() {
         if (widget.isDone) {

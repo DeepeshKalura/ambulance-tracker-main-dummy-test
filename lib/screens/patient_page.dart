@@ -1,4 +1,4 @@
-import 'package:ambulance_tracker/services/MapUtils.dart';
+import 'package:ambulance_tracker/services/map_utils.dart';
 import 'package:ambulance_tracker/services/current_location.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -7,15 +7,15 @@ class PatientPage extends StatefulWidget {
   const PatientPage({Key? key}) : super(key: key);
 
   @override
-  _PatientPageState createState() => _PatientPageState();
+  PatientPageState createState() => PatientPageState();
 }
 
 String currLoc = "";
 var details = [];
-String date_time = "", address = "";
+String dateTime = "", address = "";
 var loc = [];
 
-class _PatientPageState extends State<PatientPage> {
+class PatientPageState extends State<PatientPage> {
   @override
   void initState() {
     super.initState();
@@ -46,13 +46,13 @@ class _PatientPageState extends State<PatientPage> {
                   onPressed: () async {
                     currentLoc();
 
-                    date_time = currLoc.split("{}")[0];
+                    dateTime = currLoc.split("{}")[0];
                     address = currLoc.split("{}")[2];
                     loc = currLoc.split("{}")[1].split(" , ");
 
                     setState(() {
                       currLoc;
-                      date_time;
+                      dateTime;
                       address;
                       loc;
                     });
@@ -61,8 +61,8 @@ class _PatientPageState extends State<PatientPage> {
                 child: Column(
                   //mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("Date: " + date_time),
-                    Text("Address: " + address),
+                    Text("Date: $dateTime"),
+                    Text("Address: $address"),
                     //Text("Location: " + loc[0] + ", " + loc[1]),
                   ],
                 ),
@@ -89,7 +89,7 @@ class _PatientPageState extends State<PatientPage> {
 
   void currentLoc() async {
     currLoc = await getLoc();
-    date_time = currLoc.split("{}")[0];
+    dateTime = currLoc.split("{}")[0];
     address = currLoc.split("{}")[2];
     loc = currLoc.split("{}")[1].split(" , ");
   }
@@ -105,7 +105,7 @@ class _PatientPageState extends State<PatientPage> {
             child: Card(
               child: Column(children: [
                 Text(
-                  "Hospital " + i.toString(),
+                  "Hospital $i",
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, fontSize: 20),
                 ),

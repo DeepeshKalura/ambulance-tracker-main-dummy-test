@@ -31,17 +31,17 @@ dependencies:
   cupertino_icons: ^1.0.5
   firebase_auth: ^4.4.0
   firebase_core: ^2.9.0
+  flare_flutter: ^3.0.2
   flutter:
     sdk: flutter
   fluttertoast: null
   font_awesome_flutter: ^10.4.0
-  geocoder: ^0.2.1
-  geocoder2: ^1.4.0
+  geocoding: ^2.1.0
   google_maps_flutter: null
   intl: ^0.17.0
   location: ^4.3.0
   rive: ^0.10.3
-  simple_animations: ^2.3.0
+  simple_animations: ^5.0.0+3
   sliding_switch: null
   url_launcher: null
 

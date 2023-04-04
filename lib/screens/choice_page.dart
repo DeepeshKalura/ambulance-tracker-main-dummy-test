@@ -1,8 +1,7 @@
-// @dart=2.9;
 import 'package:ambulance_tracker/screens/patient_page.dart';
 import 'package:flutter/material.dart';
 
-import '../Animation/FadeAnimation.dart';
+import '../Animation/fade_animation.dart';
 import 'booking/ambulance_page.dart';
 import 'driver_page.dart';
 import 'hospital_page.dart';
@@ -30,8 +29,8 @@ class ChoicePage extends StatelessWidget {
                     width: 80,
                     height: 300,
                     child: FadeAnimation(
-                        1,
-                        Container(
+                        delay: 1,
+                        child: Container(
                           decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage('assets/images/light-1.png'),
@@ -44,8 +43,8 @@ class ChoicePage extends StatelessWidget {
                     width: 80,
                     height: 250,
                     child: FadeAnimation(
-                      1.3,
-                      Container(
+                      delay: 1.3,
+                      child: Container(
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
@@ -62,8 +61,8 @@ class ChoicePage extends StatelessWidget {
                     width: 80,
                     height: 250,
                     child: FadeAnimation(
-                      1.5,
-                      Container(
+                      delay: 1.5,
+                      child: Container(
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('assets/images/clock.png'),
@@ -74,8 +73,8 @@ class ChoicePage extends StatelessWidget {
                   ),
                   Positioned(
                     child: FadeAnimation(
-                        1.6,
-                        Container(
+                        delay: 1.6,
+                        child: Container(
                           margin: const EdgeInsets.only(top: 50),
                           child: const Center(
                             child: Text(
@@ -96,8 +95,8 @@ class ChoicePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   FadeAnimation(
-                    1.8,
-                    Container(
+                    delay: 1.8,
+                    child: Container(
                       padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -116,8 +115,8 @@ class ChoicePage extends StatelessWidget {
                     height: 30,
                   ),
                   FadeAnimation(
-                    2,
-                    Container(
+                    delay: 2,
+                    child: Container(
                       height: 50,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -148,8 +147,8 @@ class ChoicePage extends StatelessWidget {
                     height: 30,
                   ),
                   FadeAnimation(
-                    2,
-                    Container(
+                    delay: 2,
+                    child: Container(
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -180,8 +179,8 @@ class ChoicePage extends StatelessWidget {
                     height: 30,
                   ),
                   FadeAnimation(
-                    2,
-                    Container(
+                    delay: 2,
+                    child: Container(
                       height: 50,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -210,8 +209,8 @@ class ChoicePage extends StatelessWidget {
                     height: 30,
                   ),
                   FadeAnimation(
-                    2,
-                    Container(
+                    delay: 2,
+                    child: Container(
                       height: 50,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),

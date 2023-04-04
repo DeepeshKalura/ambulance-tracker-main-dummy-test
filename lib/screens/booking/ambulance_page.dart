@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import 'done_widget.dart';
+
 class AmbulanceBookingsPage extends StatefulWidget {
   const AmbulanceBookingsPage({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class _AmbulanceBookingsPageState extends State<AmbulanceBookingsPage> {
   var isClick = false;
   Future<void> delayFunction() async {
     await Future.delayed(
-      const Duration(seconds: 2),
+      const Duration(seconds: 1),
     );
   }
 
@@ -38,7 +40,13 @@ class _AmbulanceBookingsPageState extends State<AmbulanceBookingsPage> {
 
         return Material(
           child: isClick == true
-              ? doneWidget(context)
+              ? const DoneWidget(
+                  message: Icon(
+                    Icons.done,
+                    size: 32,
+                    color: Colors.white,
+                  ),
+                )
               : ListView(
                   children:
                       snapshot.data!.docs.map((DocumentSnapshot document) {
@@ -54,10 +62,58 @@ class _AmbulanceBookingsPageState extends State<AmbulanceBookingsPage> {
                           isClick = false;
                         });
                       },
-                      child: ListTile(
-                        title: Text(data['name']),
-                        subtitle: Text(data['phone']),
-                        trailing: Text(data['status']),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 8),
+                        margin: const EdgeInsets.only(bottom: 8),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Colors.deepPurple,
+                              Colors.blue,
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Icon(Icons.pending),
+                            const SizedBox(width: 16),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    data['name'] ?? 'Unknown',
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    data['phone'] ?? 'Unknown',
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Text(
+                              data['status'] ?? 'Unknown',
+                              style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   }).toList(),
@@ -66,32 +122,4 @@ class _AmbulanceBookingsPageState extends State<AmbulanceBookingsPage> {
       },
     );
   }
-}
-
-Widget doneWidget(BuildContext context) {
-  return SingleChildScrollView(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.5,
-          width: MediaQuery.of(context).size.width,
-          // child: RiveAnimation.network(
-          //   'https://cdn.rive.app/animations/vehicles.riv',
-          // ),
-          // child: const RiveAnimation.asset(
-          //   'assets/rive/done_checkmark.riv',
-          //   fit: BoxFit.fill,
-          // ),
-        ),
-        const Text(
-          'Ambulance Booked',
-          style: TextStyle(
-            fontSize: 30,
-          ),
-        ),
-      ],
-    ),
-  );
 }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:ambulance_tracker/screens/choice_page.dart';
 
-import '../../Animation/FadeAnimation.dart';
+import '../../Animation/fade_animation.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key key}) : super(key: key);
@@ -45,8 +45,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: 80,
                         height: 200,
                         child: FadeAnimation(
-                            1,
-                            Container(
+                            delay: 1,
+                            child: Container(
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
                                   image:
@@ -60,8 +60,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: 80,
                         height: 150,
                         child: FadeAnimation(
-                            1.3,
-                            Container(
+                            delay: 1.3,
+                            child: Container(
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
                                   image:
@@ -76,8 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: 80,
                         height: 150,
                         child: FadeAnimation(
-                            1.5,
-                            Container(
+                            delay: 1.5,
+                            child: Container(
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage('assets/images/clock.png'),
@@ -87,8 +87,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Positioned(
                         child: FadeAnimation(
-                          1.6,
-                          Container(
+                          delay: 1.6,
+                          child: Container(
                             margin: const EdgeInsets.only(top: 50),
                             child: const Center(
                               child: Text(
@@ -110,8 +110,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: <Widget>[
                       FadeAnimation(
-                        1.8,
-                        Container(
+                        delay: 1.8,
+                        child: Container(
                           padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                               color: Colors.white,
@@ -168,8 +168,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 30,
                       ),
                       FadeAnimation(
-                          2,
-                          Container(
+                          delay: 2,
+                          child: Container(
                             height: 50,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -203,8 +203,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 70,
                       ),
                       const FadeAnimation(
-                        1.5,
-                        Text(
+                        delay: 1.5,
+                        child: Text(
                           "Forgot Password?",
                           style: TextStyle(
                               color: Color.fromRGBO(143, 148, 251, 1)),

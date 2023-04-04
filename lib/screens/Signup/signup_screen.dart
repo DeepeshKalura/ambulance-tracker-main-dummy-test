@@ -19,6 +19,7 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
+
 class Body extends StatelessWidget {
   const Body({Key key}) : super(key: key);
 
@@ -74,6 +75,7 @@ class Body extends StatelessWidget {
     );
   }
 }
+
 class Background extends StatelessWidget {
   final Widget child;
   const Background({
@@ -91,7 +93,6 @@ class Background extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-
           Positioned(
             bottom: 0,
             left: 0,
@@ -145,8 +146,6 @@ class OrDivider extends StatelessWidget {
   }
 }
 
-
-
 class SocalIcon extends StatelessWidget {
   final String iconSrc;
   final Function press;
@@ -179,5 +178,3 @@ class SocalIcon extends StatelessWidget {
     );
   }
 }
-
-

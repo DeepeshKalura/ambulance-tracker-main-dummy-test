@@ -27,46 +27,48 @@ class Body extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Background(
       child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              "SIGNUP",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
-            ),
-            SizedBox(height: size.height * 0.03),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              child: Image.asset(
-                "assets/images/hands.png",
-                width: size.width * 0.7,
-              ),
-            ),
-            RoundedInputField(
-              hintText: "Your Email",
-              onChanged: (value) {},
-            ),
-            RoundedPasswordField(
-              onChanged: (value) {},
-            ),
-            RoundedButton(
-              text: "SIGNUP",
-              press: () {},
-            ),
-            SizedBox(height: size.height * 0.03),
-            AlreadyHaveAnAccountCheck(
-              login: false,
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const LoginScreen();
-                    },
+        child: Stack(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text(
+                  "SIGNUP",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                ),
+                SizedBox(height: size.height * 0.03),
+                SizedBox(
+                  child: Image.asset(
+                    "assets/images/hands.png",
+                    width: size.width * 0.7,
                   ),
-                );
-              },
+                ),
+                RoundedInputField(
+                  hintText: "Your Email",
+                  onChanged: (value) {},
+                ),
+                RoundedPasswordField(
+                  onChanged: (value) {},
+                ),
+                RoundedButton(
+                  text: "SIGNUP",
+                  press: () {},
+                ),
+                SizedBox(height: size.height * 0.03),
+                AlreadyHaveAnAccountCheck(
+                  login: false,
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const LoginScreen();
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ],
         ),
@@ -88,7 +90,6 @@ class Background extends StatelessWidget {
     return SizedBox(
       height: size.height,
       width: double.infinity,
-      // Here i can use size.width but use double.infinity because both work as a same
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
@@ -98,6 +99,14 @@ class Background extends StatelessWidget {
             child: Image.asset(
               "assets/images/main_bottom.png",
               width: size.width * 0.25,
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            child: Image.asset(
+              "assets/images/hands.png",
+              width: size.width * 0.7,
             ),
           ),
           child,

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 class FirebaseAuthenatication {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -7,7 +8,8 @@ class FirebaseAuthenatication {
     try {
       _auth.signInWithEmailAndPassword(email: email, password: password);
     } catch (e) {
-      print(e.toString());
+      var res = (e.toString());
+      debugPrint(res);
     }
   }
 
@@ -15,7 +17,8 @@ class FirebaseAuthenatication {
     try {
       _auth.createUserWithEmailAndPassword(email: email, password: password);
     } catch (e) {
-      print(e.toString());
+      var res = (e.toString());
+      debugPrint(res);
     }
   }
 
@@ -23,7 +26,8 @@ class FirebaseAuthenatication {
     try {
       _auth.signOut();
     } catch (e) {
-      print(e.toString());
+      var res = (e.toString());
+      debugPrint(res);
     }
   }
 }
